@@ -28,8 +28,9 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         initAudio()
         parsePokemonCSV()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
-        view.addGestureRecognizer(tap)
+        let tapGestureRecognizer: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tapGestureRecognizer)
+        tapGestureRecognizer.cancelsTouchesInView = false;
     }
     
     //Calls this function when the tap is recognized.
@@ -44,7 +45,7 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
             musicPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: path!))
             musicPlayer.prepareToPlay()
             musicPlayer.numberOfLoops = -1
-            musicPlayer.play()
+            musicPlayer.stop()
         } catch let err as NSError {
             print(err.description)
         }
@@ -78,8 +79,16 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         }
     }
     
+    
+    
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        
+        let poke: Pokemon!
+        if(isInSearchMode) {
+            poke = pokemonSearchArray[indexPath.row]
+        } else {
+            poke = pokemonArray[indexPath.row]
+        }
+        performSegueWithIdentifier("pokeDetails", sender: poke)
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -120,6 +129,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         view.endEditing(true)
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "pokeDetails" {
+            if let pokeDetailsVC = segue.destinationViewController as? PokeDetailsViewController, poke = sender as? Pokemon {
+                pokeDetailsVC.pokemon = poke
+                
+            }
+        }
+    }
     
     
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		792186E91C7574DB00D40383 /* PokeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792186E81C7574DB00D40383 /* PokeDetailsViewController.swift */; };
 		7924858A1C71BF6A00E49FA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 792485891C71BF6A00E49FA9 /* AppDelegate.swift */; };
 		7924858C1C71BF6A00E49FA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7924858B1C71BF6A00E49FA9 /* ViewController.swift */; };
 		7924858F1C71BF6A00E49FA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7924858D1C71BF6A00E49FA9 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		792186E81C7574DB00D40383 /* PokeDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokeDetailsViewController.swift; sourceTree = "<group>"; };
 		792485861C71BF6A00E49FA9 /* Pokemon Monsters.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokemon Monsters.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		792485891C71BF6A00E49FA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7924858B1C71BF6A00E49FA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				7924858B1C71BF6A00E49FA9 /* ViewController.swift */,
+				792186E81C7574DB00D40383 /* PokeDetailsViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				792186E91C7574DB00D40383 /* PokeDetailsViewController.swift in Sources */,
 				7924858C1C71BF6A00E49FA9 /* ViewController.swift in Sources */,
 				792485A61C71C49300E49FA9 /* Pokemon.swift in Sources */,
 				7924858A1C71BF6A00E49FA9 /* AppDelegate.swift in Sources */,
